@@ -18,15 +18,6 @@ extern struct hash_table *hash_table;
 extern seg_metrics_st *seg_metrics;
 extern seg_perttl_metrics_st perttl[MAX_N_TTL_BUCKET];
 
-static __thread __uint128_t g_lehmer64_state       = 1;
-
-static inline uint64_t
-prand(void)
-{
-    g_lehmer64_state *= 0xda942042e4dd58b5;
-    return (uint64_t) g_lehmer64_state;
-}
-
 static struct item *
 _item_alloc(uint32_t sz, int32_t ttl_bucket_idx, int32_t *seg_id)
 {

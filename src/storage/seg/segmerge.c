@@ -123,8 +123,8 @@ prep_seg_to_merge(int32_t start_seg_id,
 //            curr_seg_id = curr_seg->next_seg_id;
 //            continue;
         }
-        uint8_t evictable = __atomic_exchange_n(&curr_seg->evictable, 0, __ATOMIC_RELAXED);
 #ifdef CC_ASSERT_PANIC
+        uint8_t evictable = __atomic_exchange_n(&curr_seg->evictable, 0, __ATOMIC_RELAXED);
         ASSERT(evictable = 1);
 #endif
         segs_to_merge[(*n_evictable_seg)++] = curr_seg;
