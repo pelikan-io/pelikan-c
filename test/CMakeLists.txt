@@ -9,4 +9,4 @@ if(USE_PMEM)
     add_subdirectory(datapool)
 endif()
 
-add_subdirectory(integration)
+# add_subdirectory(integration)

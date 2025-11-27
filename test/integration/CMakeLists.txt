@@ -1,6 +1,8 @@
 set(test_name integration)
 
 include(FindPythonInterp)
+find_package(Python3 REQUIRED COMPONENTS Interpreter)
+message(STATUS "Python: ${Python_EXECUTABLE}")
 
 set(ENV_COMMAND ${CMAKE_COMMAND} -E env "PELIKAN_BIN_PATH=${CMAKE_BINARY_DIR}/_bin")
 
