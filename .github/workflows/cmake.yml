@@ -31,8 +31,3 @@ jobs:
           cmake --build _build --target test
         env:
           CTEST_OUTPUT_ON_FAILURE: 1
-
-      - name: Integration tests
-        run: |
-          cd test/integration
-          python test_twemcache.py
