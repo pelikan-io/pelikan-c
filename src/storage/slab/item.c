@@ -397,7 +397,7 @@ size_t
 item_expire(struct bstring *prefix)
 {
     uint32_t nbucket = HASHSIZE(hash_table->hash_power);
-    size_t nkey, klen, vlen;
+    size_t nkey, klen;
 
     log_info("start scanning all %"PRIu32" keys", hash_table->nhash_item);
 
@@ -408,7 +408,6 @@ item_expire(struct bstring *prefix)
 
         SLIST_FOREACH(it, entry, i_sle) {
             klen = it->klen;
-            vlen = it->vlen;
             if (klen >= prefix->len &&
                     cc_bcmp(prefix->data, item_key(it), prefix->len) == 0) {
                 nkey++;

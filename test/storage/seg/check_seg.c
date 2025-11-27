@@ -40,13 +40,6 @@ test_teardown(void)
     seg_teardown();
 }
 
-static void
-test_reset(void)
-{
-    test_teardown();
-    test_setup();
-}
-
 /**
  * Tests basic functionality for item_insert with small key/val. Checks that the
  * commands succeed and that the item returned is well-formed.
